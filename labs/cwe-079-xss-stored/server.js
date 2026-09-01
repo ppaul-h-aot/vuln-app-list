@@ -120,6 +120,13 @@ const SHARED_STYLES = `
     cursor: pointer;
   }
   button:hover { background: #57207f; }
+  .form-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  button.secondary {
+    background: transparent; color: var(--muted); border: 1px solid var(--line);
+    padding: 10px 18px; font-size: 0.92rem;
+  }
+  button.secondary:hover { background: #fff; color: var(--ink); border-color: #c4b8d4; }
+  .reset-form { margin: 0 0 14px; }
   .section-title {
     margin: 34px 0 14px; font-family: var(--font-display);
     font-size: 1.15rem; letter-spacing: -0.02em;
@@ -265,6 +272,9 @@ app.get("/feedback", (_req, res) => {
       </form>
     </section>
     <h2 class="section-title">Recent notes</h2>
+    <form class="reset-form" method="post" action="/feedback/reset">
+      <button type="submit" class="secondary">Clear feedback wall</button>
+    </form>
     ${renderFeedbackList()}
     <p style="margin-top:18px"><a href="/">Back to home</a></p>`,
     })
@@ -288,6 +298,11 @@ app.post("/feedback", (req, res) => {
     });
   }
 
+  res.redirect(302, "/feedback");
+});
+
+app.post("/feedback/reset", (_req, res) => {
+  feedbackEntries.length = 0;
   res.redirect(302, "/feedback");
 });
 
