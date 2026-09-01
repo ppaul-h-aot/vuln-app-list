@@ -1,6 +1,7 @@
 {
   "generated_by": "repo-of-vulns/scripts/publish-labs.sh",
   "labs": [
-    {"cwe":"CWE-79","name":"xss-reflected","service_name":"cwe-079-xss-reflected","path":"labs/cwe-079-xss-reflected","base_url":"https://cwe-079-xss-reflected.onrender.com"}
+    {"cwe":"CWE-79","name":"xss-reflected","service_name":"cwe-079-xss-reflected","path":"labs/cwe-079-xss-reflected","base_url":"https://cwe-079-xss-reflected.onrender.com"},
+    {"cwe":"CWE-79","name":"xss-stored","service_name":"cwe-079-xss-stored","path":"labs/cwe-079-xss-stored","base_url":"https://cwe-079-xss-stored.onrender.com"}
   ]
 }

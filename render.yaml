@@ -8,3 +8,11 @@ services:
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
+  - type: web
+    name: cwe-079-xss-stored
+    runtime: node
+    plan: free
+    rootDir: labs/cwe-079-xss-stored
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
